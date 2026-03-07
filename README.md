@@ -1,23 +1,23 @@
-# 🎬 CineTrack — Movie Tracker App
+#  CineTrack — Movie Tracker App
 
 A full-stack movie tracking web application built with **React**, **Django**, and **MongoDB**. Users can search for movies, manage a personal watchlist, rate films, and view stats about their watching habits.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🔐 JWT Authentication (Register, Login, Logout, Auto token refresh)
-- 🔍 Search movies powered by the TMDB API
-- 🎥 Movie detail pages with cast, runtime, genres, and backdrop
-- 📋 Personal watchlist with status tracking (Want to Watch / Watching / Watched)
-- ⭐ Star rating system (1–5 stars)
-- 📊 Profile stats (total saved, watched, avg rating)
-- 🔥 Most Watched page showing top movies across all users
-- 📱 Responsive design with a dark cinematic theme
+-  JWT Authentication (Register, Login, Logout, Auto token refresh)
+-  Search movies powered by the TMDB API
+-  Movie detail pages with cast, runtime, genres, and backdrop
+-  Personal watchlist with status tracking (Want to Watch / Watching / Watched)
+-  Star rating system (1–5 stars)
+-  Profile stats (total saved, watched, avg rating)
+-  Most Watched page showing top movies across all users
+-  Responsive design with a dark cinematic theme
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -34,7 +34,7 @@ A full-stack movie tracking web application built with **React**, **Django**, an
 
 ---
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 ### Auth
 
