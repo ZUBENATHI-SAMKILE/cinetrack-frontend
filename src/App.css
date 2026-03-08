@@ -737,14 +737,29 @@ input {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-image: url("/movies-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   z-index: 0;
+
+  
+  background-image: url("/movies-bg.jpg");
+  background-size: cover;           
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;     
 }
 
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); 
+  z-index: 1;
+}
+
+
 .auth-card {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 420px;
   background: var(--surface);
@@ -832,6 +847,24 @@ input {
 .auth-switch a { color: var(--accent); font-weight: 500; }
 .auth-switch a:hover { text-decoration: underline; }
 
+
+@media (max-width: 768px) {
+  .auth-page {
+    background-position: center center; 
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    background-position: top center;
+    background-attachment: scroll;   
+    padding: 1.5rem;
+  }
+
+  .auth-card {
+    padding: 2rem;
+  }
+}
 .bookmark-icon-red {
   color: #e50914;
   transition: 0.2s ease;
