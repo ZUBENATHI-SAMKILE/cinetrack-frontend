@@ -739,7 +739,24 @@ input {
   padding: 2rem;
   background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--bg) 60%);
 }
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/movies-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
 
+.auth-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  z-index: 1;
+}
 .auth-card {
   width: 100%;
   max-width: 420px;

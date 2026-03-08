@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
-// ── Axios Instance 
+// Axios Instance 
 const api = axios.create({ baseURL: BASE_URL });
 
 // Attach access token to every request
@@ -35,7 +35,7 @@ api.interceptors.response.use(
   }
 );
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
+// Auth 
 
 export async function register(email, username, password) {
   const { data } = await api.post("/auth/register/", { email, username, password });
@@ -67,7 +67,7 @@ export function isLoggedIn() {
   return !!localStorage.getItem("access_token");
 }
 
-// ── Movies (TMDB Proxy) ───────────────────────────────────────────────────────
+// Movies (TMDB Proxy) 
 
 export async function fetchPopular() {
   const { data } = await api.get("/movies/popular/");
@@ -84,7 +84,7 @@ export async function fetchMovieDetail(tmdbId) {
   return data;
 }
 
-// ── Watchlist ─────────────────────────────────────────────────────────────────
+// Watchlist 
 
 export async function getWatchlist(status = null) {
   const params = status ? { status } : {};
@@ -120,7 +120,7 @@ export async function removeFromWatchlist(tmdbId) {
   await api.delete(`/movies/watchlist/${tmdbId}/`);
 }
 
-// ── Stats & Most Watched ──────────────────────────────────────────────────────
+// Stats & Most Watched 
 
 export async function getUserStats() {
   const { data } = await api.get("/movies/stats/");
