@@ -37,8 +37,8 @@ api.interceptors.response.use(
 
 // Auth 
 
-export async function register(email, username, password) {
-  const { data } = await api.post("/auth/register/", { email, username, password });
+export async function register(email, username, password, confirm_password) {
+  const { data } = await api.post("/auth/register/", { email, username, password, confirm_password });
   localStorage.setItem("access_token", data.tokens.access);
   localStorage.setItem("refresh_token", data.tokens.refresh);
   return data.user;

@@ -5,7 +5,7 @@ import { register } from "../api";
 
 export default function Register() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: "", username: "", password: "" });
+  const [form, setForm] = useState({ email: "", username: "", password: "", confirm_password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -14,13 +14,24 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (form.password !== form.confirm_password) {
+      setError("Passwords do not match.");
+      return;
+    }
+
     setLoading(true);
     try {
-      await register(form.email, form.username, form.password);
+      await register(form.email, form.username, form.password, form.confirm_password);
       navigate("/");
     } catch (err) {
       const data = err.response?.data;
-      const msg = data?.email?.[0] || data?.username?.[0] || data?.password?.[0] || "Registration failed.";
+      const msg =
+        data?.confirm_password?.[0] ||
+        data?.email?.[0] ||
+        data?.username?.[0] ||
+        data?.password?.[0] ||
+        "Registration failed.";
       setError(msg);
     } finally {
       setLoading(false);
@@ -30,7 +41,7 @@ export default function Register() {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <div className="auth-logo"><Film size={28} />  <span>CineTrack</span></div>
+        <div className="auth-logo"><Film size={28} /> <span>CineTrack</span></div>
         <h2 className="auth-title">Create account</h2>
         <p className="auth-sub">Start tracking your movies</p>
 
@@ -65,6 +76,18 @@ export default function Register() {
               type="password"
               name="password"
               value={form.password}
+              onChange={handleChange}
+              placeholder="••••••••"
+              minLength={6}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirm_password"
+              value={form.confirm_password}
               onChange={handleChange}
               placeholder="••••••••"
               minLength={6}
