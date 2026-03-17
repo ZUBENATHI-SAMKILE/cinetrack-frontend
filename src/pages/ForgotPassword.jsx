@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Film, ArrowLeft,Mail } from "lucide-react";
+import { Film, ArrowLeft, Mail } from "lucide-react";
 import axios from "axios";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
@@ -55,7 +55,7 @@ export default function ForgotPassword() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
+                  placeholder="email@gmail.com"
                   required
                 />
               </div>
