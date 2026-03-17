@@ -874,23 +874,3 @@ input {
   transform: scale(1.1);
   filter: drop-shadow(0 0 6px #e50914);
 }
-.forgot-link {
-  float: right;
-  font-size: 13px;
-  color: #a0a0b0;
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.forgot-link:hover {
-  color: #ffffff;
-}
-
-.auth-success-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 48px;
-  margin: 8px 0 16px;
-}

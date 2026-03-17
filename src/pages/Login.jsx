@@ -42,7 +42,7 @@ export default function Login() {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="email@gmail.com"
               required
             />
           </div>

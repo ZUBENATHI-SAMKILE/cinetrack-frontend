@@ -66,7 +66,7 @@ export default function Register() {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="email@gmail.com"
               required
             />
           </div>

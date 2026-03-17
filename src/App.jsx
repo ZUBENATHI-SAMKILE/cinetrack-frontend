@@ -8,16 +8,20 @@ import Profile from "./pages/Profile";
 import MostWatched from "./pages/MostWatched";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Public routes — no Navbar */}
+        {/* Public routes,no Navbar */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:uidb64/:token" element={<ResetPassword />} />
 
-        {/* Protected routes — with Navbar */}
+        {/* Protected routes ,with Navbar */}
         <Route path="/*" element={
           <PrivateRoute>
             <Navbar />

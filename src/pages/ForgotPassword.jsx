@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Film, ArrowLeft } from "lucide-react";
+import { Film, ArrowLeft,Mail } from "lucide-react";
 import axios from "axios";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
@@ -32,7 +32,7 @@ export default function ForgotPassword() {
 
         {success ? (
           <>
-            <div className="auth-success-icon">📧</div>
+            <div className="auth-success-icon"><Mail size={28} /></div>
             <h2 className="auth-title">Check your email</h2>
             <p className="auth-sub">
               If that email is registered, you'll receive a reset link shortly.
