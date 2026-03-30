@@ -29,6 +29,7 @@ export default function Login() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo"><Film size={28} /> <span>CineTrack</span></div>
+        <button type="button" className="auth-back" onClick={() => navigate("/")}>Back to landing</button>
         <h2 className="auth-title">Welcome back</h2>
         <p className="auth-sub">Sign in to your account</p>
 
