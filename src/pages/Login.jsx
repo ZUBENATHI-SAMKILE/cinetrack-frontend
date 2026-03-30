@@ -17,7 +17,7 @@ export default function Login() {
     setLoading(true);
     try {
       await login(form.email, form.password);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       setError(err.response?.data?.error || "Login failed. Please try again.");
     } finally {

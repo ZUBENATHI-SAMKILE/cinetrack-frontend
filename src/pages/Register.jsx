@@ -23,7 +23,7 @@ export default function Register() {
     setLoading(true);
     try {
       await register(form.email, form.username, form.password, form.confirm_password);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       const data = err.response?.data;
       const msg =
