@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
+import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
 import Watchlist from "./pages/Watchlist";
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <Routes>
         {/* Public routes,no Navbar */}
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -27,11 +29,11 @@ function App() {
             <Navbar />
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/movie/:id" element={<MovieDetail />} />
-                <Route path="/watchlist" element={<Watchlist />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/most-watched" element={<MostWatched />} />
+                <Route path="home" element={<Home />} />
+                <Route path="movie/:id" element={<MovieDetail />} />
+                <Route path="watchlist" element={<Watchlist />} />
+                <Route path="profile" element={<Profile />} />
+                <Route path="most-watched" element={<MostWatched />} />
               </Routes>
             </main>
           </PrivateRoute>

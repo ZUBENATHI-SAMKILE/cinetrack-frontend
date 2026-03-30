@@ -18,7 +18,7 @@ export default function Navbar() {
   };
 
   const links = [
-    { to: "/", label: "Home" },
+    { to: "/home", label: "Home" },
     { to: "/watchlist", label: "My List" },
     { to: "/most-watched", label: "Most Watched" },
     { to: "/profile", label: "Profile" },
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
+      <Link to="/home" className="navbar-logo">
          <Film size={28} /> <span>CineTrack</span>
       </Link>
       <div className="navbar-links">
@@ -41,8 +41,17 @@ export default function Navbar() {
         ))}
       </div>
       <div className="navbar-user">
-        {user && <span className="nav-username"><User size={21} /> {user.username}</span>}
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+        {user ? (
+          <>
+            <span className="nav-username"><User size={21} /> {user.username}</span>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <div className="auth-links">
+            <Link to="/login" className="nav-link auth-link">Sign in</Link>
+            <Link to="/register" className="nav-link auth-link">Register</Link>
+          </div>
+        )}
       </div>
     </nav>
   );
