@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Film, User } from "lucide-react";
-import { logout, getProfile } from "../api";
+import { logout, getProfile, isLoggedIn } from "../api";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -9,6 +9,7 @@ export default function Navbar() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    if (!isLoggedIn()) return;
     getProfile().then(setUser).catch(() => {});
   }, []);
 

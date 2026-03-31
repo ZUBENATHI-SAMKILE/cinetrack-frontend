@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../api";
-import { Film } from "lucide-react";
+import { Film, ArrowLeft } from "lucide-react";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,7 +29,9 @@ export default function Login() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo"><Film size={28} /> <span>CineTrack</span></div>
-        <button type="button" className="auth-switch" onClick={() => navigate("/")}> Back </button>
+        <button type="button" className="back-button" onClick={() => navigate("/")}>
+          <ArrowLeft size={16} /> Back
+        </button>
         <h2 className="auth-title">Welcome back</h2>
         <p className="auth-sub">Sign in to your account</p>
 
